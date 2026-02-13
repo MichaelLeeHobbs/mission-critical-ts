@@ -1,4 +1,6 @@
-# mission-critical-ts
+# mission-critical-ts - _The AI Safety Net for Critical Systems_
+
+AI accelerates development, but speed without discipline is a liability. **mission-critical-ts** provides the discipline layer: a coding standard that defines what correct looks like, skills that generate compliant code by default, and multi-agent reviews that catch what humans miss. Move fast without breaking critical things.
 
 A collection of documents, coding standards, and AI skills for developing Node.js/TypeScript applications and libraries in mission-critical environments (aerospace, finance, healthcare, infrastructure). Safety, predictability, and verifiability take priority over convenience or brevity.
 
