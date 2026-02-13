@@ -25,12 +25,18 @@ Reusable skills in `.claude/skills/` that can be copied into any TypeScript proj
 | Skill | Description |
 |-------|-------------|
 | `/adr <title>` | Create an Architecture Decision Record |
-| `/project-docs [list]` | Scaffold project documentation |
-| `/dependency-audit` | Audit dependencies for pinning, security, licensing |
+| `/project-docs [list]` | Scaffold project documentation (README, LICENSE, etc.) |
 | `/project-init` | Initialize/upgrade a project to match the coding standard |
 | `/scaffold-module <name>` | Generate a module with types, schemas, and tests |
+| `/scaffold-ci [components]` | CI pipeline, quality gates, release automation, observability |
+| `/scaffold-tests [types]` | Mutation, contract, load, and chaos testing setup |
+| `/scaffold-docker [components]` | Dockerfile, health checks, Docker Compose |
+| `/dependency-audit` | Audit dependencies for pinning, security, licensing |
 | `/pr-review [pr]` | Review a PR diff against the coding standard |
 | `/deep-review [scope]` | Comprehensive 5-agent code review |
+| `/security-audit [scope]` | OWASP Top 10, threat model, supply chain, secrets, ASVS |
+| `/audit [type]` | Dead code, PII handling, SOC 2 readiness |
+| `/ops-docs [type]` | Runbooks, incident playbooks, architecture diagrams, API docs |
 
 ## Getting Started
 

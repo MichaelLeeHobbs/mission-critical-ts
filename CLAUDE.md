@@ -72,13 +72,33 @@ Reusable Claude Code skills live in `.claude/skills/`. Invoke with `/<skill-name
 
 | Skill | Description | Creates Files? |
 |-------|-------------|----------------|
+### Project Setup & Code Generation
+
+| Skill | Description | Creates Files? |
+|-------|-------------|----------------|
 | `/adr <title>` | Create an Architecture Decision Record in `docs/adr/` | Yes |
 | `/project-docs [list]` | Scaffold project documentation (README, LICENSE, CONTRIBUTING, etc.) | Yes |
-| `/dependency-audit` | Audit dependencies for pinning, security, licensing (read-only report) | No |
 | `/project-init` | Initialize or upgrade a TypeScript project to match the coding standard | Yes |
 | `/scaffold-module <name>` | Generate a new module with types, schemas, tests, and barrel export | Yes |
+| `/scaffold-ci [components]` | CI pipeline, quality gates, release automation, observability setup | Yes |
+| `/scaffold-tests [types]` | Advanced testing: mutation (Stryker), contract (Pact), load (k6), chaos | Yes |
+| `/scaffold-docker [components]` | Dockerfile, health check module, Docker Compose | Yes |
+
+### Reviews & Audits
+
+| Skill | Description | Creates Files? |
+|-------|-------------|----------------|
+| `/dependency-audit` | Audit dependencies for pinning, security, licensing (read-only report) | No |
 | `/pr-review [pr-number]` | Review a PR diff against shall-level coding standard rules | No |
 | `/deep-review [scope]` | Comprehensive 5-agent review (security, standards, YAGNI, architecture, goals) | Yes |
+| `/security-audit [scope]` | OWASP Top 10, threat model, supply chain, secrets, CI security, ASVS, hardening | No |
+| `/audit [type]` | Code quality and compliance: dead code, PII handling, SOC 2 readiness | No |
+
+### Documentation
+
+| Skill | Description | Creates Files? |
+|-------|-------------|----------------|
+| `/ops-docs [type]` | Operational docs: runbooks, incident playbooks, architecture diagrams, API docs, license reports | Yes |
 
 ### Deep Review Agents
 
