@@ -33,7 +33,7 @@ If `$ARGUMENTS` is provided, parse it as a comma-separated list of keys. Otherwi
 - Read `package.json` for project name, dependencies, scripts
 - Read `CLAUDE.md` and `README.md` for project description
 - Scan `src/` directory structure to understand module layout
-- Read `documents/TypeScript Coding Standard for Mission-Critical Systems.md` if present
+- Read `.claude/docs/TypeScript Coding Standard for Mission-Critical Systems.md` if present
 
 ---
 

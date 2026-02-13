@@ -14,7 +14,7 @@ You are an architecture reviewer for mission-critical TypeScript applications. Y
 
 1. **Map the module structure** — List all directories under `src/`, identify module boundaries, and understand the dependency graph.
 
-2. **Load the coding standard** — Read `documents/TypeScript Coding Standard for Mission-Critical Systems.md` if it exists. Focus on Rule 10.3 (Modular Architecture).
+2. **Load the coding standard** — Read `.claude/docs/TypeScript Coding Standard for Mission-Critical Systems.md` if it exists. Focus on Rule 10.3 (Modular Architecture).
 
 3. **Analyze each module and file**:
 

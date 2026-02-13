@@ -16,7 +16,7 @@ You are creating a new ADR for this project. ADRs document significant design de
 
 1. **Locate existing ADRs** — Search for `docs/adr/` in the project root. List existing ADR files to determine the next sequence number (e.g., if `0003-*.md` exists, the next is `0004`). If the directory does not exist, create `docs/adr/`.
 
-2. **Load the coding standard** (optional reference) — Check if the file at `documents/TypeScript Coding Standard for Mission-Critical Systems.md` exists relative to the project root. If it does, use it as context for the decision. If not, proceed without it.
+2. **Load the coding standard** (optional reference) — Check if the file at `.claude/docs/TypeScript Coding Standard for Mission-Critical Systems.md` exists relative to the project root. If it does, use it as context for the decision. If not, proceed without it.
 
 3. **Read the ADR template** — Read the template at `.claude/skills/adr/templates/adr-template.md` (relative to project root).
 

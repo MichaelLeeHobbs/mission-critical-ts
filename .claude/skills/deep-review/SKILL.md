@@ -28,7 +28,7 @@ The review scope is: **$ARGUMENTS** (default: `all` — review the entire `src/`
 - Read the reference checklists:
   - `.claude/skills/deep-review/references/review-checklist.md`
   - `.claude/skills/deep-review/references/security-checklist.md`
-- Check if the coding standard exists at `documents/TypeScript Coding Standard for Mission-Critical Systems.md` and load it if present
+- Check if the coding standard exists at `.claude/docs/TypeScript Coding Standard for Mission-Critical Systems.md` and load it if present
 
 ### 2. Launch 5 parallel reviewer agents
 

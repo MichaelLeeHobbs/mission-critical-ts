@@ -10,7 +10,7 @@ You are performing a read-only audit of this project's dependencies against the 
 
 ## Instructions
 
-1. **Load the coding standard** (optional reference) — Check if `documents/TypeScript Coding Standard for Mission-Critical Systems.md` exists. If present, use it to cross-reference specific rules. If absent, apply the rules described below.
+1. **Load the coding standard** (optional reference) — Check if `.claude/docs/TypeScript Coding Standard for Mission-Critical Systems.md` exists. If present, use it to cross-reference specific rules. If absent, apply the rules described below.
 
 2. **Read package.json** — Read `package.json` from the project root. If it does not exist, report that and stop.
 

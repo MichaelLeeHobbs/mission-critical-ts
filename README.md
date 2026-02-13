@@ -14,9 +14,7 @@ A collection of documents, coding standards, and AI skills for developing Node.j
 
 ## Documents
 
-Standards and reference materials live in [`documents/`](documents/):
-
-- [TypeScript Coding Standard for Mission-Critical Systems](documents/TypeScript%20Coding%20Standard%20for%20Mission-Critical%20Systems.md) — Rigorous framework for high-reliability TypeScript
+- [TypeScript Coding Standard for Mission-Critical Systems](.claude/docs/TypeScript%20Coding%20Standard%20for%20Mission-Critical%20Systems.md) — Rigorous framework for high-reliability TypeScript
 
 ## Claude Code Skills
 
@@ -40,13 +38,9 @@ Reusable skills in `.claude/skills/` that can be copied into any TypeScript proj
 
 ## Getting Started
 
-### Use the coding standard
-
-Copy `documents/TypeScript Coding Standard for Mission-Critical Systems.md` into your project's documentation, or reference it directly.
-
 ### Use the Claude Code skills
 
-Copy the `.claude/skills/` and `.claude/agents/` directories into your project. The skills will appear in Claude Code's `/` autocomplete menu.
+Copy the `.claude/` directory into your project. This includes the skills, agents, and the coding standard they reference. The skills will appear in Claude Code's `/` autocomplete menu.
 
 ### Initialize a new project from scratch
 
@@ -60,9 +54,9 @@ This sets up strict `tsconfig.json`, ESLint, Result/branded type utilities, Husk
 ## Project Structure
 
 ```
-documents/              # Standards and reference materials
 .claude/
-  skills/               # 7 portable Claude Code skills
+  docs/                 # Coding standard (travels with skills)
+  skills/               # 13 portable Claude Code skills
     adr/                # Architecture Decision Records
     project-docs/       # Documentation scaffolding
     dependency-audit/   # Dependency auditing

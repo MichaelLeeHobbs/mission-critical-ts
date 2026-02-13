@@ -29,7 +29,7 @@ If `$ARGUMENTS` is provided, parse it as a comma-separated list of audit keys, o
 ### 2. Load context
 
 - Read `package.json` for project metadata and dependencies
-- Read `CLAUDE.md` and `documents/TypeScript Coding Standard for Mission-Critical Systems.md` if present
+- Read `CLAUDE.md` and `.claude/docs/TypeScript Coding Standard for Mission-Critical Systems.md` if present
 - Determine source file scope: all `.ts` files under `src/`
 
 ### 3. Execute selected audits

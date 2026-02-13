@@ -50,7 +50,7 @@ Agent definitions in `.claude/agents/` are markdown files that define specialize
 
 ## Coding Standard Changes
 
-The coding standard at `documents/TypeScript Coding Standard for Mission-Critical Systems.md` is the foundation of the project. Changes to it require:
+The coding standard at `.claude/docs/TypeScript Coding Standard for Mission-Critical Systems.md` is the foundation of the project. Changes to it require:
 
 - **Rationale** — explain *why* the rule exists, citing real-world failure modes or industry standards
 - **Compliance level** — classify as shall (mandatory), should (recommended), or may (optional)

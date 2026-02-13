@@ -10,7 +10,7 @@ AI accelerates development, but speed without discipline is a liability. **missi
 
 A collection of documents, coding standards, and AI skills for developing Node.js/TypeScript applications and libraries in mission-critical environments (aerospace, finance, healthcare, infrastructure). Safety, predictability, and verifiability take priority over convenience or brevity.
 
-Standards and reference materials live in `documents/`. The full coding standard is at `documents/TypeScript Coding Standard for Mission-Critical Systems.md`.
+The full coding standard is at `.claude/docs/TypeScript Coding Standard for Mission-Critical Systems.md`. It lives inside `.claude/` so it travels with the skills when copied into other projects.
 
 ## Build
 

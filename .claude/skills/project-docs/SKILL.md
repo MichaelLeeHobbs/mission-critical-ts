@@ -36,7 +36,7 @@ The following documents can be generated:
 3. **Read project context** — Examine the following to tailor the generated docs:
    - `package.json` (project name, description, version, license, scripts)
    - `CLAUDE.md` (project overview)
-   - `documents/TypeScript Coding Standard for Mission-Critical Systems.md` (if present, reference it in CONTRIBUTING.md)
+   - `.claude/docs/TypeScript Coding Standard for Mission-Critical Systems.md` (if present, reference it in CONTRIBUTING.md)
    - Existing `README.md` or other docs (to avoid contradictions)
 
 4. **Generate each document** — Create each file with appropriate content:

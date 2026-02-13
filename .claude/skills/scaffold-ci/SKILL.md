@@ -32,7 +32,7 @@ Read:
 - `package.json` — project name, scripts, dependencies
 - `tsconfig.json` — verify TypeScript is configured
 - `.github/workflows/` — check for existing workflows (avoid overwriting)
-- `documents/TypeScript Coding Standard for Mission-Critical Systems.md` — if present, cross-reference rules for quality gates
+- `.claude/docs/TypeScript Coding Standard for Mission-Critical Systems.md` — if present, cross-reference rules for quality gates
 
 ---
 

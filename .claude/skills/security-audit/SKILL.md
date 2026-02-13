@@ -32,7 +32,7 @@ If `$ARGUMENTS` is provided, parse it as a comma-separated list of audit keys, o
 
 ### 2. Load context
 
-- Read `documents/TypeScript Coding Standard for Mission-Critical Systems.md` if present — cross-reference specific rules
+- Read `.claude/docs/TypeScript Coding Standard for Mission-Critical Systems.md` if present — cross-reference specific rules
 - Read `.claude/skills/deep-review/references/security-checklist.md` for the existing security checklist
 - Read `package.json` for dependencies and project metadata
 - Determine the scope of source files: all `.ts` files under `src/`

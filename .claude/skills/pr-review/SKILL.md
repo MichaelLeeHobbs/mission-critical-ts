@@ -36,7 +36,7 @@ Use git to get the diff:
 
 1. **Read the reference checklist** — Read `.claude/skills/pr-review/references/pr-review-checklist.md` for the full checklist.
 
-2. **Load the coding standard** (optional) — Check if `documents/TypeScript Coding Standard for Mission-Critical Systems.md` exists. If present, use it for exact rule references. If absent, use the checklist as your primary reference.
+2. **Load the coding standard** (optional) — Check if `.claude/docs/TypeScript Coding Standard for Mission-Critical Systems.md` exists. If present, use it for exact rule references. If absent, use the checklist as your primary reference.
 
 3. **Analyze the diff** — For each changed file:
    - Identify the type of change (new file, modification, deletion, rename)

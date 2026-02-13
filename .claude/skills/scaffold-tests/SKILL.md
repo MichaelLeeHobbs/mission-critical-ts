@@ -32,7 +32,7 @@ If `$ARGUMENTS` is provided, parse it as a comma-separated list of keys. Otherwi
 - Read `package.json` for test runner (Vitest expected per coding standard), dependencies, and scripts
 - Read `tsconfig.json` for TypeScript configuration
 - Scan `src/` for existing modules (to scope mutation testing)
-- Read `documents/TypeScript Coding Standard for Mission-Critical Systems.md` if present
+- Read `.claude/docs/TypeScript Coding Standard for Mission-Critical Systems.md` if present
 
 ---
 

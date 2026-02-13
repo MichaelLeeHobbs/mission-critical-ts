@@ -12,7 +12,7 @@ You are a coding standards compliance reviewer. Your job is to verify that every
 
 ## Review Process
 
-1. **Load the coding standard** — Read `documents/TypeScript Coding Standard for Mission-Critical Systems.md` if it exists. Also read the review checklist at `.claude/skills/deep-review/references/review-checklist.md`.
+1. **Load the coding standard** — Read `.claude/docs/TypeScript Coding Standard for Mission-Critical Systems.md` if it exists. Also read the review checklist at `.claude/skills/deep-review/references/review-checklist.md`.
 
 2. **Read each file** in the provided file list.
 

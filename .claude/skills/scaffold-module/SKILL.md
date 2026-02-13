@@ -23,7 +23,7 @@ The module name is: **$ARGUMENTS**
 
 2. **Check for conflicts** — Verify `src/${MODULE_NAME}/` does not already exist. If it does, ask the user whether to overwrite or abort.
 
-3. **Load the coding standard** (optional reference) — Check if `documents/TypeScript Coding Standard for Mission-Critical Systems.md` exists. Use it as context for generating compliant code.
+3. **Load the coding standard** (optional reference) — Check if `.claude/docs/TypeScript Coding Standard for Mission-Critical Systems.md` exists. Use it as context for generating compliant code.
 
 4. **Ask the user about the module** — Gather:
    - What does this module do? (brief description)
