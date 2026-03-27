@@ -1,0 +1,121 @@
+{
+  "logGroup": "/ecs/my-service",
+  "queryPrefix": "MyService",
+  "queries": [
+    {
+      "name": "MyService/Errors/All",
+      "query": "fields @timestamp, level, event, message, errMsg, correlationId, hostname\n| filter level in ['error', 'fatal', 'critical']\n| sort @timestamp desc\n| limit 200"
+    },
+    {
+      "name": "MyService/Errors/Daily Check",
+      "query": "fields @timestamp, level, event, message, errMsg, correlationId, hostname\n| filter level not in ['info', 'debug', 'trace']\n| sort @timestamp desc\n| limit 500"
+    },
+    {
+      "name": "MyService/Errors/By Event Type",
+      "query": "fields event, errMsg\n| filter level in ['error', 'fatal', 'critical']\n| stats count(*) as occurrences by event\n| sort occurrences desc\n| limit 50"
+    },
+
+    {
+      "name": "MyService/Lookup/By Correlation ID",
+      "query": "fields @timestamp, event, level, message, errMsg, hostname\n| filter correlationId = 'REPLACE_ME'\n| sort @timestamp asc\n| limit 2000"
+    },
+    {
+      "name": "MyService/Lookup/By User",
+      "query": "fields @timestamp, event, level, message, correlationId, hostname\n| filter userId = 'REPLACE_ME'\n| sort @timestamp desc\n| limit 500"
+    },
+    {
+      "name": "MyService/Lookup/By Entity ID",
+      "query": "fields @timestamp, event, level, message, correlationId, hostname\n| filter entityId = 'REPLACE_ME'\n| sort @timestamp asc\n| limit 1000"
+    },
+    {
+      "name": "MyService/Lookup/First and Last Event",
+      "query": "fields @timestamp, event, correlationId, hostname\n| filter correlationId = 'REPLACE_ME'\n| stats min(@timestamp) as firstEvent, max(@timestamp) as lastEvent, count(*) as totalEvents by hostname\n| display firstEvent, lastEvent, totalEvents, hostname"
+    },
+
+    {
+      "name": "MyService/Audit/All",
+      "query": "fields @timestamp, action, actor, resource, ip, status, requestId\n| filter event = 'audit'\n| sort @timestamp desc\n| limit 500"
+    },
+    {
+      "name": "MyService/Audit/Failed Auth",
+      "query": "fields @timestamp, action, actor, ip, status, requestId\n| filter event = 'audit'\n| filter action in ['AUTH_FAILED', 'LOGIN_FAILED']\n| sort @timestamp desc\n| limit 200"
+    },
+    {
+      "name": "MyService/Audit/By Actor",
+      "query": "fields @timestamp, action, resource, status, requestId, ip\n| filter event = 'audit'\n| filter actor = 'REPLACE_ME'\n| sort @timestamp desc\n| limit 500"
+    },
+    {
+      "name": "MyService/Audit/Data Mutations",
+      "query": "fields @timestamp, action, actor, resource, detail, requestId, ip\n| filter event = 'audit'\n| filter action in ['CREATE', 'UPDATE', 'DELETE']\n| sort @timestamp desc\n| limit 500"
+    },
+
+    {
+      "name": "MyService/HTTP/Requests",
+      "query": "fields @timestamp, method, path, status, durationMs, requestId, userId, hostname\n| filter event = 'http.request'\n| sort @timestamp desc\n| limit 500"
+    },
+    {
+      "name": "MyService/HTTP/Slow Requests",
+      "query": "fields @timestamp, method, path, status, durationMs, requestId, hostname\n| filter event = 'http.request'\n| filter durationMs > 5000\n| sort durationMs desc\n| limit 200"
+    },
+    {
+      "name": "MyService/HTTP/5xx Errors",
+      "query": "fields @timestamp, method, path, status, errMsg, requestId, hostname\n| filter event = 'http.request'\n| filter status >= 500\n| sort @timestamp desc\n| limit 200"
+    },
+    {
+      "name": "MyService/HTTP/Status Distribution",
+      "query": "fields status\n| filter event = 'http.request'\n| stats count(*) as requests by status\n| sort status asc"
+    },
+
+    {
+      "name": "MyService/Health/Status",
+      "query": "fields @timestamp, hostname, activeConnections, memoryUsageMB, cpuPercent, uptime\n| filter event = 'health.status'\n| sort @timestamp desc\n| limit 100"
+    },
+    {
+      "name": "MyService/Health/Memory Over Time",
+      "query": "filter event = 'health.status'\n| stats max(memoryUsageMB) by bin(5m)"
+    },
+
+    {
+      "name": "MyService/Inter-System/Sent",
+      "query": "fields @timestamp, targetSystem, messageType, correlationId, entityId, hostname\n| filter event = 'message.sent'\n| sort @timestamp desc\n| limit 500"
+    },
+    {
+      "name": "MyService/Inter-System/Received",
+      "query": "fields @timestamp, sourceSystem, messageType, correlationId, entityId, hostname\n| filter event = 'message.received'\n| sort @timestamp desc\n| limit 500"
+    },
+    {
+      "name": "MyService/Inter-System/Failed",
+      "query": "fields @timestamp, targetSystem, messageType, correlationId, errMsg, hostname\n| filter event = 'message.sendFailed'\n| sort @timestamp desc\n| limit 200"
+    },
+    {
+      "name": "MyService/Inter-System/Trace Message",
+      "query": "fields @timestamp, event, sourceSystem, targetSystem, messageType, hostname\n| filter correlationId = 'REPLACE_ME'\n| filter event in ['message.sent', 'message.received', 'message.sendFailed']\n| sort @timestamp asc\n| limit 500"
+    },
+
+    {
+      "name": "MyService/Analysis/Request Latency KPIs",
+      "query": "stats\n    avg(durationMs) as avgMs,\n    pct(durationMs, 50) as p50Ms,\n    pct(durationMs, 95) as p95Ms,\n    pct(durationMs, 99) as p99Ms,\n    max(durationMs) as maxMs,\n    count(*) as totalRequests\n| filter event = 'http.request'"
+    },
+    {
+      "name": "MyService/Analysis/Latency Over Time",
+      "query": "stats\n    avg(durationMs) as avgMs,\n    pct(durationMs, 95) as p95Ms\nby bin(1h) as timeWindow\n| filter event = 'http.request'\n| sort timeWindow desc\n| limit 168"
+    },
+    {
+      "name": "MyService/Analysis/Latency by Endpoint",
+      "query": "stats\n    avg(durationMs) as avgMs,\n    pct(durationMs, 95) as p95Ms,\n    count(*) as requests\nby path\n| filter event = 'http.request'\n| sort p95Ms desc\n| limit 50"
+    },
+    {
+      "name": "MyService/Analysis/Error Rate Over Time",
+      "query": "filter event = 'http.request'\n| stats\n    sum(status >= 500) / count(*) * 100 as errorRatePercent,\n    count(*) as totalRequests\nby bin(1h) as timeWindow\n| sort timeWindow desc\n| limit 168"
+    },
+    {
+      "name": "MyService/Analysis/Throughput Over Time",
+      "query": "filter event = 'http.request'\n| stats count(*) as requestsPerHour by bin(1h) as timeWindow\n| sort timeWindow desc\n| limit 168"
+    },
+
+    {
+      "name": "MyService/Debug",
+      "query": "fields @timestamp, level, event, message, errMsg, correlationId, hostname\n#| filter level = 'error'\n#| filter hostname = 'REPLACE_ME'\n#| filter event = 'REPLACE_ME'\n| sort @timestamp desc\n| limit 1000"
+    }
+  ]
+}

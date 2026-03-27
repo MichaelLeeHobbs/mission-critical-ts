@@ -10,7 +10,11 @@ AI accelerates development, but speed without discipline is a liability. **missi
 
 A collection of documents, coding standards, and AI skills for developing Node.js/TypeScript applications and libraries in mission-critical environments (aerospace, finance, healthcare, infrastructure). Safety, predictability, and verifiability take priority over convenience or brevity.
 
-The full coding standard is at `.claude/docs/TypeScript Coding Standard for Mission-Critical Systems.md`. It lives inside `.claude/` so it travels with the skills when copied into other projects.
+The standards live inside `.claude/docs/` so they travel with the skills when copied into other projects:
+
+- **Coding Standard**: `.claude/docs/CodingStandard.md` — rules and rationale
+- **Logging Standard**: `.claude/docs/LoggingStandard.md` — structured logging, correlation, audit trails
+- **Reference Configs**: `.claude/docs/ReferenceConfigs.md` — tsconfig, ESLint, Result utilities, Brand type
 
 ## Build
 
@@ -18,7 +22,7 @@ The full coding standard is at `.claude/docs/TypeScript Coding Standard for Miss
 npm run build    # runs tsc
 ```
 
-No test runner or linter is configured yet in `package.json`. The coding standard mandates Jest/Vitest for testing and ESLint with `@typescript-eslint` (see Appendix A of the standard for the recommended `.eslintrc.json`).
+No test runner or linter is configured yet in `package.json`. The coding standard mandates Jest/Vitest for testing and ESLint with `@typescript-eslint` (see `ReferenceConfigs.md` for the recommended `.eslintrc.json`).
 
 ## TypeScript Configuration
 
